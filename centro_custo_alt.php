@@ -17,7 +17,7 @@
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-1">
-                <h3 class="mb-0">Cadastro do Centro de Custo</h3> 
+                <h3 class="mb-0">Atualização do Centro de Custo</h3> 
             </div>
 
 
@@ -37,9 +37,7 @@
                     ?>
 
                 <div class="form-group">
-                    <label>
-                        Atualização do Centro de Custo
-                    </label>
+      
 
                     <input type="text" placeholder="Centro de custo" class="form-control form-control-alternative" value="<?php echo $centro_custo?>" name="centro_custo">
                 </div>
