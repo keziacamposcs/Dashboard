@@ -757,3 +757,25 @@
 </body>
 
 </html>
+
+
+<option value="<?php echo $id_centro_custo ?>"><?php echo $centro_custo  ?></option>
+<input type="text" class="form-control form-control-alternative" placeholder="Centro de Custo" name="centro_custo" required="">
+
+<?php } ?>
+
+<!--INICIO DO FORMULARIO -->
+<div class="container" style="margin-top:10px">
+
+<form action = "centro_custo_inserir.php" method ="get">
+
+<div class="row">
+
+
+    <!--CENTRO DE CUSTO -->
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="mb-0">Centro de Custo</label>
+                <input type="text" class="form-control form-control-alternative" placeholder="Centro de Custo" name="centro_custo" required="">
+        </div>
+    </div>
