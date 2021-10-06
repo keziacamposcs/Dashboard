@@ -36,24 +36,28 @@
 
                                             <?php
                                                 include 'conexao/conexao.php';
-                                                $sql = 'SELECT *  FROM empresa';
+                                                $sql = 'SELECT *  FROM fatura';
                                                 $buscar = mysqli_query($conexao, $sql);
 
                                             
                                                 while ($dados = mysqli_fetch_array($buscar)){
-                                                    $id_empresa = $dados['id_empresa'];
-                                                    $empresa_nome = $dados['empresa_nome'];
-                                                    $empresa_cnpj = $dados['empresa_cnpj'];
-                                                    $empresa_mail = $dados['empresa_mail'];
+                                                    $id_fatura = $dados['id_fatura'];
+                                                    $empresa_fatura = $dados['empresa_fatura'];
+                                                    $mes_fatura = $dados['mes_fatura'];
+                                                    $centro_custo_fatura = $dados['centro_custo_fatura'];
+                                                    $valor_fatura = $dados['valor_fatura'];
+                                                    $obs_fatura = $dados['obs_fatura'];
 
                                                 ?>
 
                                                 <tr>
-                                                    <td><?php echo $id_empresa ?></td>
-                                                    <td><?php echo $empresa_nome ?></td>
-                                                    <td><?php echo $empresa_cnpj ?></td>
-                                                    <td><?php echo $empresa_mail ?></td>
-                                                    <td><a href = "empresa_alt.php?id=<?php echo $id_empresa?>" role=button class="btn btn-primary">Editar<td>
+                                                    <td><?php echo $id_fatura ?></td>
+                                                    <td><?php echo $empresa_fatura ?></td>
+                                                    <td><?php echo $mes_fatura ?></td>
+                                                    <td><?php echo $centro_custo_fatura ?></td>
+                                                    <td><?php echo number_format($valor_fatura,2, ',', '.')?></td>
+                                                    <td><?php echo $obs_fatura ?></td>
+                                                    <td><a href = "fatura_alt.php?id=<?php echo $id_fatura?>" role=button class="btn btn-primary">Editar</td>
                                                 </tr>
 
                                             <?php   }   ?>

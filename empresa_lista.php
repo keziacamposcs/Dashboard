@@ -16,7 +16,7 @@
             <div class="card shadow">
 
                 <div class="card-header border-1">
-                    <h3 class="mb-0">Cadastro da empresa</h3> 
+                    <h3 class="mb-0">Lista da empresa</h3> 
                 </div>
                    <!-- DataTales Example -->
                    <div class="card shadow mb-4">
@@ -50,7 +50,7 @@
                                                     <td><?php echo $empresa_nome ?></td>
                                                     <td><?php echo $empresa_cnpj ?></td>
                                                     <td><?php echo $empresa_mail ?></td>
-                                                    <td><a href = "empresa_alt.php?id=<?php echo $id_empresa?>" role=button class="btn btn-primary">Editar<td>
+                                                    <td><a href = "empresa_alt.php?id=<?php echo $id_empresa?>" role=button class="btn btn-primary">Editar</td>
                                                 </tr>
 
                                             <?php   }   ?>

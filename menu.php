@@ -51,8 +51,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!--<h6 class="collapse-header">Configurações customizadas:</h6>-->
-                        <a class="collapse-item" href="budget_cad.php">Cadastrar Budget</a>
-                        <a class="collapse-item" href="budget_alt.php">Lista do Budget</a>
+                        <a class="collapse-item" href="budget_cad.php">Cadastrar Suprimentos</a>
+                        <a class="collapse-item" href="budget_lista.php">Lista dos Suprimentos</a>
                     </div>
                 </div>
             </li>   
@@ -70,7 +70,7 @@
                         <a class="collapse-item" href="fatura_cad.php">Cadastrar fatura</a>
                         <a class="collapse-item" href="fatura_lista.php">Lista das faturas</a>
                         <h6 class="collapse-header">Ordem de Compra</h6>
-                        <a class="collapse-item" href="oc_cad.php">Cadastrar OC</a>
+                        <!--<a class="collapse-item" href="oc_cad.php">Cadastrar OC</a>-->
                         <a class="collapse-item" href="oc_lista.php">Lista das OC</a>
                     </div>
                 </div>

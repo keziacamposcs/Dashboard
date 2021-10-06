@@ -22,14 +22,14 @@ include 'menu.php'
 <!--INICIO DO FORMULARIO -->
         <div class="container" style="margin-top:10px">
 
-        <form action = "/dashboardx/inserir_budget.php" method ="get">
+        <form action = "budget_inserir.php" method ="get">
                 <div class="row">
 
                     <!--NOME DO BUDGET -->
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="mb-0">Nome do Budget</label>
-                                <input type="text" class="form-control form-control-alternative"  name="budget_nome" required="" autocomplete="off">
+                            <label class="mb-0">Nome do Suprimento</label>
+                                <input type="text" class="form-control form-control-alternative"  name="suprimento" required="" autocomplete="off">
                         </div>
                     </div>
 
@@ -37,53 +37,115 @@ include 'menu.php'
                     <!--VALOR DO BUDGET -->
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label class="mb-0">Valor do Budget</label>
-                                <input type="number" class="form-control form-control-alternative"  name="budget_valor" required="" autocomplete="off">
+                            <label class="mb-0">Valor do Suprimento</label>
+                                <input type="number" class="form-control form-control-alternative"  name="valor_sup" required="" autocomplete="off">
                         </div>
                     </div>
 
-                    <!--EMPRESAS DO BUDGET -->
+                    <!--SELECIONA A EMPRESA DA FATURA -->
                     <div class="col-md-6">
-                        <div class="form-check">
+                        <div class="form-group">
+                            <label class="mb-0">Empresa n°1</label>
 
-                            <!-- CHECK DE EMPRESAS -->
-
-                            <label class="form-check-label" for="flexCheckDefault" name = "budget_empresa">
-                            Selecione as empresas referente a esse Budget: </br>
-
-                                <?php
+                            <select class="form-control" name = "empresa_sup1">
+                            <!--PHP -->
+                            <?php
                                     include 'conexao/conexao.php';
                                     $sql = 'SELECT *  FROM empresa';
                                     $buscar = mysqli_query($conexao, $sql);
 
                                    
-                                    while ($dados = mysqli_fetch_array($buscar)){
+                                    while ($dados = mysqli_fetch_array($buscar))
+                                    {
                                         $empresa_nome = $dados['empresa_nome'];
-                                    ?>
-                                    
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" value = "<?php echo $empresa_nome?>">
-                                            <?php 
-                                                echo $empresa_nome    
-                                            ?>
-                                        <br>
-                                    </input>
+                            ?>
 
-                                    
-                                    <?php   }   ?>
-                            </label>
-                             <!-- FIM DE CHECK DE EMPRESAS -->
+                            <option value="<?php echo $empresa_nome  ?>"    ><?php  echo $empresa_nome  ?></option>
 
-                                
+                            <?php
+                                }
+                            ?>
 
+                            </select>
+                        </div>
 
+                        <div class="form-group">
+                            <label class="mb-0">Empresa n°2</label>
 
+                            <select class="form-control" name = "empresa_sup2">
+                            <!--PHP -->
+                            <?php
+                                    include 'conexao/conexao.php';
+                                    $sql = 'SELECT *  FROM empresa';
+                                    $buscar = mysqli_query($conexao, $sql);
 
+                                   
+                                    while ($dados = mysqli_fetch_array($buscar))
+                                    {
+                                        $empresa_nome = $dados['empresa_nome'];
+                            ?>
 
+                            <option value="<?php echo $empresa_nome  ?>"    ><?php  echo $empresa_nome  ?></option>
 
+                            <?php
+                                }
+                            ?>
 
+                            </select>
                         </div>
                     </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="mb-0">Empresa n°3</label>
 
+                            <select class="form-control" name = "empresa_sup3">
+                            <!--PHP -->
+                            <?php
+                                    include 'conexao/conexao.php';
+                                    $sql = 'SELECT *  FROM empresa';
+                                    $buscar = mysqli_query($conexao, $sql);
+
+                                   
+                                    while ($dados = mysqli_fetch_array($buscar))
+                                    {
+                                        $empresa_nome = $dados['empresa_nome'];
+                            ?>
+
+                            <option value="<?php echo $empresa_nome  ?>"    ><?php  echo $empresa_nome  ?></option>
+
+                            <?php
+                                }
+                            ?>
+
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="mb-0">Empresa n°4</label>
+
+                            <select class="form-control" name = "empresa_sup4">
+                            <!--PHP -->
+                            <?php
+                                    include 'conexao/conexao.php';
+                                    $sql = 'SELECT *  FROM empresa';
+                                    $buscar = mysqli_query($conexao, $sql);
+
+                                   
+                                    while ($dados = mysqli_fetch_array($buscar))
+                                    {
+                                        $empresa_nome = $dados['empresa_nome'];
+                            ?>
+
+                            <option value="<?php echo $empresa_nome  ?>"    ><?php  echo $empresa_nome  ?></option>
+
+                            <?php
+                                }
+                            ?>
+
+                            </select>
+                        </div>
+                    </div>
 
                    
                     

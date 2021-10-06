@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <label class="mb-0">Empresa</label>
 
-                            <select class="form-control" name = "empresa_despesa">
+                            <select class="form-control" name = "empresa_fatura">
                             <!--PHP -->
                             <?php
                                     include 'conexao/conexao.php';
@@ -63,7 +63,7 @@
                         <div class="form-group">
                             <label class="mb-0">Mês</label>
 
-                            <select class="form-control" name = "mes_despesa">
+                            <select class="form-control" name = "mes_fatura">
                             <option selected>Selecione o mês</option>
                             <option>Jan</option>
                             <option>Fev</option>
@@ -85,7 +85,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="mb-0">Valor</label>
-                                <input type="numeric" class="form-control form-control-alternative"  name="valor_despesa" required="" autocomplete="off">
+                                <input type="numeric" class="form-control form-control-alternative"  name="valor_fatura" required="" autocomplete="off">
                         </div>
                     </div>
 
@@ -95,7 +95,7 @@
                         <div class="form-group">
                             <label class="mb-0">Centro de Custo</label>
 
-                            <select class="form-control" name = "centro_custo_despesa">
+                            <select class="form-control" name = "centro_custo_fatura">
                             <!--PHP -->
                             <?php
                                     include 'conexao/conexao.php';
@@ -121,7 +121,7 @@
                 <div class="col-md-6">
                         <div class="form-group">
                             <label class="mb-0">Observação</label>
-                                    <textarea class="form-control" name = "despesa_obs" rows="3">
+                                    <textarea class="form-control" name = "obs_fatura" rows="3">
                                     </textarea>                                   
                             </select>
                         </div>

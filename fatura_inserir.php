@@ -2,11 +2,11 @@
     include 'menu.php';
 
 
-    $fatura_empresa = $_GET['empresa_despesa'];
-    $mes_despesa= $_GET['mes_despesa'];
-    $valor_despesa = $_GET['valor_despesa'];
-    $centro_custo_despesa = $_GET['centro_custo_despesa'];
-    $despesa_obs = $_GET['despesa_obs'];
+    $empresa_fatura = $_GET['empresa_fatura'];
+    $mes_fatura= $_GET['mes_fatura'];
+    $valor_fatura = $_GET['valor_fatura'];
+    $centro_custo_fatura = $_GET['centro_custo_fatura'];
+    $obs_fatura = $_GET['obs_fatura'];
 
 ?>
 
@@ -31,7 +31,7 @@
             <?php
 
                 include 'conexao/conexao.php';
-                $sql = "INSERT INTO despesa (empresa_despesa , mes_despesa, valor_despesa, centro_custo_despesa, despesa_obs) VALUES ('$empresa_despesa', '$mes_despesa', '$valor_despesa', '$centro_custo_despesa', '$despesa_obs')";
+                $sql = "INSERT INTO fatura (empresa_fatura, mes_fatura, valor_fatura, centro_custo_fatura, obs_fatura) VALUES ('$empresa_fatura', '$mes_fatura', '$valor_fatura', '$centro_custo_fatura', '$obs_fatura')";
                 $inserir = mysqli_query($conexao, $sql);
 
                 if($sql)    
