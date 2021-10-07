@@ -179,11 +179,9 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Gráfico de gastos</h6>
                                 </div>
                                 <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
+                                <?php
+                                    include 'grafico_gasto.php';
+                                ?>
                             </div>
                         </div>
 
@@ -191,27 +189,16 @@
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Centro de Custos</h6>
                                 </div>
+
+
                                 <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Base
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> ETJ
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Matriz
-                                        </span>
-                                    </div>
-                                </div>
+                                <?php
+                                    include 'grafico_centro_custo.php';
+                                ?>
+
                             </div>
                         </div>
                     </div>
@@ -219,64 +206,14 @@
                         <!-- Table -->
                         <div class="row">
                             <div class="col">
-
                                     <div class="card-header border-1">
                                         <h3 class="mb-0">Tabela dos Gastos</h3> 
                                     </div>
                                     <!-- DataTales -->
-                                    <div class="card shadow mb-4">
-                                            <div class="card-body">
-                                                <div class="table-responsive">
-                                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                                        <thead>
-                                                                <th>Suprimento</th>
-                                                                <th>Budget</th>
-                                                                <th>Gasto Base</th>
-                                                                <th>Gasto ETJ</th>
-                                                                <th> Gasto Matriz</th>
-                                                                <th>Diferença</th>
-                                                        </thead>
+                                    <?php include 'tabela_gastos.php';?>
 
-                                                                <?php
-                                                                    include 'conexao/conexao.php';
-                                                                    $sql = 'SELECT *  FROM suprimento';
-                                                                    $buscar = mysqli_query($conexao, $sql);
-
-                                                                
-                                                                    while ($dados = mysqli_fetch_array($buscar)){
-                                                                        $suprimento = $dados['suprimento'];
-
-
-                                                                        $valor_sup = $dados['valor_sup'];
-
-                                                                    ?>
-
-                                                                    <tr>
-                                                                        <td><?php echo $suprimento ?></td>
-                                                                        <td><?php echo $empresa_sup1 ?></td>
-                                                                        <td><?php echo $empresa_sup2 ?></td>
-                                                                        <td><?php echo $empresa_sup3 ?></td>
-                                                                        <td><?php echo $empresa_sup4 ?></td>
-                                                                        <td><?php echo number_format($valor_sup,2, ',', '.')?></td>
-                                                                    </tr>
-
-                                                                <?php   }   ?>
-
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-
-
-
-
-
-                </div>
-                <!-- /.container-fluid -->
+                        </div>
+                        <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->

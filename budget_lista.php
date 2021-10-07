@@ -59,7 +59,7 @@
                                                     <td><?php echo $empresa_sup2 ?></td>
                                                     <td><?php echo $empresa_sup3 ?></td>
                                                     <td><?php echo $empresa_sup4 ?></td>
-                                                    <td><?php echo number_format($valor_sup,2, ',', '.')?></td>
+                                                    <td>R$ <?php echo number_format($valor_sup,2, ',', '.')?></td>
                                                     <td><a href = "budget_alt.php?id=<?php echo $id_suprimento?>" role=button class="btn btn-primary">Editar</td>
                                                 </tr>
 
