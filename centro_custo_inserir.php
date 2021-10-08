@@ -37,7 +37,7 @@
                 $teste;
 
 
-                if($teste == 1 )    
+                if($sql )    
                         {
                     ?>
 

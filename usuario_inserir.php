@@ -33,7 +33,7 @@
                 $teste = mysqli_fetch_array($conexao);
 
 
-                if($teste == 1 )
+                if($sql)
                         {
                     ?>
 

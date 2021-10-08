@@ -23,45 +23,31 @@
 <!--INICIO DO FORMULARIO -->
         <div class="container" style="margin-top:10px">
 
-        <form action = "usuario_inserir.php" method ="get">
-
+        <form action = "usuario_alt.php" method ="post">
                 <div class="row">
+                <?php
+                    include 'conexao/conexao.php';
+                    $sql = "SELECT * FROM usuario WHERE id_usuario = $id";
+                    $buscar = mysqli_query($conexao, $sql);
+
+                    while($dados = mysqli_fetch_array($buscar))
+                    {
+                        $id_usuario = $dados['id_usuario'];
+                        $usuario_nome = $dados['usuario_nome'];
+                    }
+                ?>
 
                     <!--senha-->
                     <div class="col-md-6">
-                        <?php
-                            include 'conexao/conexao.php';
-                            $sql = "SELECT * FROM usuario WHERE id_usuario = $id";
-                            $buscar = mysqli_query($conexao, $sql);
-
-                            while($dados = mysqli_fetch_array($buscar))
-                            {
-                                $id_usuario = $dados['id_usuario'];
-                            }
-                        ?>
 
                         <div class="form-group">
                             <label class="mb-0">Usuario</label>
-                                <input type="text" class="form-control form-control-alternative" name="usuario_nome" readonly="true">
+                                <input type="text" class="form-control form-control-alternative" value = "<?php echo $usuario_nome; ?>"name="usuario_nome" readonly="true">
                         </div>
 
                         <div class="form-group">
                             <label class="mb-0">Senha</label>
                                 <input type="password" class="form-control form-control-alternative" placeholder="Minímo 8 digitos" name="usuario_senha" required="">
-                        </div>
-                    </div>
-
-                    <!--nivel-->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="mb-0">Nível do usuario</label>
-
-                            <select class="form-control" name = "usuario_nivel">
-                            <option selected>Selecione o nível do usuario</option>
-                            <option value = "1">Administrador</option>
-                            <option value = "2">Visitante</option>
-                            </select>
-
                         </div>
                     </div>
 <!--BOTÃO -->
