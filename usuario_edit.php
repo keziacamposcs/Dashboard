@@ -1,5 +1,7 @@
 <?php
     include 'menu.php';
+
+    $id = $_GET['id'];
 ?>
 
 <!DOCTYPE html>
@@ -25,17 +27,24 @@
 
                 <div class="row">
 
-
-                    <!--nome usuario-->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="mb-0">Usuário</label>
-                                <input type="text" class="form-control form-control-alternative" placeholder="Nome do Usuário" name="usuario_nome" required="">
-                        </div>
-                    </div>
-
                     <!--senha-->
                     <div class="col-md-6">
+                        <?php
+                            include 'conexao/conexao.php';
+                            $sql = "SELECT * FROM usuario WHERE id_usuario = $id";
+                            $buscar = mysqli_query($conexao, $sql);
+
+                            while($dados = mysqli_fetch_array($buscar))
+                            {
+                                $id_usuario = $dados['id_usuario'];
+                            }
+                        ?>
+
+                        <div class="form-group">
+                            <label class="mb-0">Usuario</label>
+                                <input type="text" class="form-control form-control-alternative" name="usuario_nome" readonly="true">
+                        </div>
+
                         <div class="form-group">
                             <label class="mb-0">Senha</label>
                                 <input type="password" class="form-control form-control-alternative" placeholder="Minímo 8 digitos" name="usuario_senha" required="">

@@ -18,7 +18,6 @@ $tetj = $dados2['tetj'];
 /*Matriz
 $sqlbase = "SELECT SUM(valor_fatura) as tbase FROM fatura WHERE centro_custo_fatura = 'Matriz' ";
 $busca1 = mysqli_query($conexao, $sqlbase);                              
-
 $dados1 = mysqli_fetch_array($busca1);
 $tbase = $dados1['tbase'];
 */
@@ -33,23 +32,20 @@ $tbase = $dados1['tbase'];
 <body>
 <!-- Pie Chart -->
 <!-- Card Body -->
-    <div class="card-body">
-        <div class="chart-pie pt-4 pb-2">
-            <canvas id="myPieChart"></canvas>
-        </div>
+<div class="card-body">
+  <div class="chart-pie pt-4 pb-2">
+    <canvas id="myPieChart"></canvas>
+  </div>
         
-        <div class="mt-4 text-center small">
-            <span class="mr-2">
-                <i class="fas fa-circle text-primary"></i> Base
-            </span>
-            <span class="mr-2">
-                <i class="fas fa-circle text-success"></i> ETJ
-            </span>
-            <span class="mr-2">
-                <i class="fas fa-circle text-info"></i> Matriz
-            </span>
-        </div>
-    </div>
+  <div class="mt-4 text-center small">
+    <span class="mr-2">
+      <i class="fas fa-circle text-primary"></i> Base
+    </span>
+    <span class="mr-2">
+      <i class="fas fa-circle text-success"> </i> ETJ
+    </span>
+  </div>
+</div>
                                 
 
 <?php   include'rodape.php';?>

@@ -26,6 +26,7 @@
 
                     $sql = 'SELECT *  FROM suprimento';
                     $buscar = mysqli_query($conexao, $sql);
+                    
                     $sql2 =  'SELECT `valor_fatura`FROM `fatura` WHERE `centro_custo_fatura` = "Base"';
                     $buscar2 = mysqli_query($conexao, $sql2);
 

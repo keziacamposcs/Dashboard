@@ -112,7 +112,7 @@
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-piggy-bank fa-2x text-gray-300"></i>
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -157,7 +157,7 @@
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fas fa-piggy-bank fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -167,7 +167,6 @@
 
 
                     <!-- Content Row -->
-
                     <div class="row">
 
                         <!-- Area Chart -->
@@ -176,11 +175,10 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Gráfico de gastos</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Gráfico Mensal</h6>
                                 </div>
-                                <!-- Card Body -->
                                 <?php
-                                    include 'grafico_gasto.php';
+                                    include 'grafico_mensal.php';
                                 ?>
                             </div>
                         </div>
@@ -193,7 +191,6 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Centro de Custos</h6>
                                 </div>
 
-
                                 <!-- Card Body -->
                                 <?php
                                     include 'grafico_centro_custo.php';
@@ -203,6 +200,24 @@
                         </div>
                     </div>
 
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Gráfico das Empresas</h6>
+                                </div>
+                                <?php
+                                    include 'grafico_gasto_empresa.php';
+                                ?>
+                            </div>
+                        </div>
+
+
                         <!-- Table -->
                         <div class="row">
                             <div class="col">
@@ -211,12 +226,14 @@
                                     </div>
                                     <!-- DataTales -->
                                     <?php include 'tabela_gastos.php';?>
-
+                                </div>
+                            </div>
                         </div>
                         <!-- /.container-fluid -->
 
-            </div>
-            <!-- End of Main Content -->
+                    </div>
+                    <!-- End of Main Content -->
+                </div>
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">

@@ -32,8 +32,10 @@
                 include 'conexao/conexao.php';
                 $sql = "INSERT INTO suprimento (suprimento, empresa_sup1, empresa_sup2, empresa_sup3, empresa_sup4, valor_sup ) VALUES ('$suprimento', '$empresa_sup1', '$empresa_sup2', '$empresa_sup3', '$empresa_sup4', '$valor_sup')";
                 $inserir = mysqli_query($conexao, $sql);
+                $teste = mysqli_fetch_array($conexao);
 
-                if($sql)    
+
+                if($teste == 1 )    
                         {
                     ?>
 

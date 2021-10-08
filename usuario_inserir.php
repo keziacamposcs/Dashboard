@@ -1,13 +1,10 @@
 <?php
     include 'menu.php';
-
-
-    $empresa_fatura = $_GET['empresa_fatura'];
-    $mes_fatura= $_GET['mes_fatura'];
-    $valor_fatura = $_GET['valor_fatura'];
-    $centro_custo_fatura = $_GET['centro_custo_fatura'];
-    $obs_fatura = $_GET['obs_fatura'];
-
+    include 'script/password.php'
+    
+    $usuario_nome = $_POST['usuario_nome'];
+    $usuario_senha= $_POST['usuario_senha'];
+    $usuario_nivel = $_POST['usuario_nivel'];
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +28,7 @@
             <?php
 
                 include 'conexao/conexao.php';
-                $sql = "INSERT INTO fatura (empresa_fatura, mes_fatura, valor_fatura, centro_custo_fatura, obs_fatura) VALUES ('$empresa_fatura', '$mes_fatura', '$valor_fatura', '$centro_custo_fatura', '$obs_fatura')";
+                $sql = "INSERT INTO usuario (usuario_nome, usuario_senha, usuario_nivel) VALUES ('$usuario_nome', '$usuario_senha', '$usuario_nivel')";
                 $inserir = mysqli_query($conexao, $sql);
                 $teste = mysqli_fetch_array($conexao);
 
