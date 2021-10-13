@@ -1,11 +1,9 @@
 <?php
-include 'menu.php'
-$usuario_nome= $_POST['usuario_senha'];
-$usuario_senha= $_POST['usuario_senha'];
-$usuario_nivel= $_POST['usuario_senha'];
-
+    include 'menu.php';
+	$id = isset($_POST['id']) ? $_POST['id'] : null;
+	$id_usuario = $_POST['id_usuario'];
+    $usuario_senha= $_POST['usuario_senha'];
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -13,16 +11,13 @@ $usuario_nivel= $_POST['usuario_senha'];
 </head>
 <body>
 
-
-
-
 <div class="container-fluid mt--7 " style= "top">
       <!-- Table -->
       <div class="row">
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-1">
-              <h3 class="mb-0">Cadastro de Usuários</h3>
+              <h3 class="mb-0">Atualização do Usuário</h3>
             </div>
 
 
@@ -30,30 +25,32 @@ $usuario_nivel= $_POST['usuario_senha'];
         <div class="container" style="margin-top:10px" style= "text-align: center">
             <?php
 
-                include 'conexao/conexao.php';
+            include 'conexao/conexao.php';
 
-                $atualizar  = "UPDATE usuario SET usuario_senha = '$usuario_senha' WHERE id_usuario = $id_usuario";
-                $query  = mysqli_query($conexao, $atualizar);
+			echo	$sql = "UPDATE usuario SET usuario_senha = '$usuario_senha' WHERE id = '$id'";
+			$atualizar = mysqli_query($conexao, $sql);
 
 
-                $sql = "INSERT INTO usuario (usuario_nome, usuario_senha, usuario_nivel) VALUES ('$usuario_nome', '$usuario_senha', '$usuario_nivel')";
-                $inserir = mysqli_query($conexao, $sql);
-                $teste = mysqli_fetch_array($conexao);
-
-                if($teste == 1 ){
-                ?>
+                if($sql )
+                        {
+                    ?>
 
 
                     <div class="container"  style= "text-align: center">
-                        <h4>Atualizado com sucesso! </h4>
+                        <h4>Atualização realizada com sucesso!</h4>
                     </div>
-                <?php   } else {?>
+                <?php
+                        }
+                    else 
+                        {
+                ?>
 
                     <div class="container"  style= "text-align: center">
                         <h4>Falha ao atualizar!</h4>
                     </div>
-                
-                <?php   }
+
+                <?php
+                    }
                 ?> 
 
         </div>
@@ -62,10 +59,7 @@ $usuario_nivel= $_POST['usuario_senha'];
       </div>
     </div>  
 
-
 </div>
 
-<?php   include 'rodape.php'; ?>
-
 </body>
-</html>
+</html> 

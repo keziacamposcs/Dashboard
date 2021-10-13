@@ -33,8 +33,7 @@
                 include 'conexao/conexao.php';
                 $sql = "INSERT INTO centro_custo (centro_custo) VALUES ('$centro_custo')";
                 $inserir = mysqli_query($conexao, $sql);
-                $teste = mysqli_fetch_array($conexao);
-                $teste;
+
 
 
                 if($sql )    

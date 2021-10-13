@@ -33,8 +33,6 @@
                 include 'conexao/conexao.php';
                 $sql = "INSERT INTO fatura (empresa_fatura, mes_fatura, valor_fatura, centro_custo_fatura, obs_fatura) VALUES ('$empresa_fatura', '$mes_fatura', '$valor_fatura', '$centro_custo_fatura', '$obs_fatura')";
                 $inserir = mysqli_query($conexao, $sql);
-                $teste = mysqli_fetch_array($conexao);
-
 
                 if($sql )
                         {

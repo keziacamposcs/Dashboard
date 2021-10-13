@@ -16,7 +16,7 @@
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-1">
-              <h3 class="mb-0">Cadastro de Usuário</h3> 
+              <h3 class="mb-0">Atualização de Usuário</h3> 
             </div>
 
 
@@ -27,34 +27,46 @@
                 <div class="row">
                 <?php
                     include 'conexao/conexao.php';
-                    $sql = "SELECT * FROM usuario WHERE id_usuario = $id";
+                    echo $sql = "SELECT * FROM usuario WHERE id = $id";
                     $buscar = mysqli_query($conexao, $sql);
 
                     while($dados = mysqli_fetch_array($buscar))
                     {
-                        $id_usuario = $dados['id_usuario'];
+                        $id = $dados['id'];
                         $usuario_nome = $dados['usuario_nome'];
+
                     }
                 ?>
 
-                    <!--senha-->
+                    <!--nome usuario-->
                     <div class="col-md-6">
-
                         <div class="form-group">
-                            <label class="mb-0">Usuario</label>
-                                <input type="text" class="form-control form-control-alternative" value = "<?php echo $usuario_nome; ?>"name="usuario_nome" readonly="true">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="mb-0">Senha</label>
-                                <input type="password" class="form-control form-control-alternative" placeholder="Minímo 8 digitos" name="usuario_senha" required="">
+                            <label class="mb-0">Usuário</label>
+                                <input type="text" class="form-control form-control-alternative" value = "<?php echo $id_usuario; ?>"name="id_usuario" readonly="true">
                         </div>
                     </div>
+
+                    <!--nome usuario-->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="mb-0">Usuário</label>
+                                <input type="text" class="form-control form-control-alternative" value = "<?php echo $usuario_nome; ?>"name="usuario_nome" readonly="true">
+                        </div>
+                    </div>
+
+                    <!--senha-->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="mb-0">Senha</label>
+                                <input type="password" class="form-control form-control-alternative" placeholder="Minímo 8 digitos"name="usuario_senha" required="">
+                        </div>
+                    </div>
+
 <!--BOTÃO -->
 
         <div class="card-body py-4">
             <div style= "text-align: right">
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <button type="submit" class="btn btn-primary">Atualizar</button>
             </div>
         </div>
 

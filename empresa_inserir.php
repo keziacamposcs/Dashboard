@@ -29,7 +29,6 @@
                 include 'conexao/conexao.php';
                 $sql = "INSERT INTO empresa (empresa_nome, empresa_cnpj, empresa_mail) VALUES ('$empresa_nome', '$empresa_cnpj', '$empresa_mail')";
                 $inserir = mysqli_query($conexao, $sql);
-                $teste = mysqli_fetch_array($conexao);
 
 
                 if($sql )
