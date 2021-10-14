@@ -32,20 +32,20 @@
 
                         <div class="form-group">
                             <label> Usuário </label>
-                            <input type="text" name="fname" id="fname" class="form-control"
-                                placeholder="Enter First Name">
+                            <input type="text" name="usuario_nome" id="usuario_nome" class="form-control"
+                                placeholder="Usuário">
                         </div>
 
                         <div class="form-group">
                             <label> Senha </label>
-                            <input type="text" name="lname" id="lname" class="form-control"
-                                placeholder="Enter First Name">
+                            <input type="password" name="usuario_senha" id="usuario_senha" class="form-control"
+                                placeholder="Senha">
                         </div>
 
                         <div class="form-group">
                             <label class="mb-0">Nível de Acesso</label>
 
-                            <select class="form-control" name = "course" id = "course" placeholder="Enter First Name">
+                            <select class="form-control" name = "usuario_nivel" id = "usuario_nivel" placeholder="Selecione o nível de acesso">
                             <option selected>Selecione o nível de acesso</option>
                             <option value = "Administrador">Administrador</option>
                             <option value = "Visitante">Visitante</option>
@@ -227,9 +227,9 @@
                 console.log(data);
 
                 $('#update_id').val(data[0]);
-                $('#fname').val(data[1]);
-                $('#lname').val(data[2]);
-                $('#course').val(data[3]);
+                $('#usuario_nome').val(data[1]);
+                $('#usuario_senha').val(data[2]);
+                $('#usuario_nivel').val(data[3]);
             });
         });
     </script>

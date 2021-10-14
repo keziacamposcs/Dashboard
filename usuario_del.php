@@ -3,9 +3,9 @@ include 'conexao/conexao.php';
 
 if(isset($_POST['deletedata']))
 {
-    $id = $_POST['delete_id'];
+    $usuario_id = $_POST['delete_id'];
 
-    $query = "DELETE FROM usuario WHERE usuario_id='$id'";
+    $query = "DELETE FROM usuario WHERE usuario_id='$usuario_id'";
     $query_run = mysqli_query($conexao, $query);
 
     if($query_run)
