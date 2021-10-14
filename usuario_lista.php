@@ -107,8 +107,8 @@
                                 <th scope="col">Usuário</th>
                                 <th scope="col">Senha</th>
                                 <th scope="col"> Nível de Acesso </th>
-                                <th scope="col"> EDITAR </th>
-                                <th scope="col"> DELETAR </th>
+                                <th scope="col">  </th>
+                                <th scope="col">  </th>
                             </tr>
                         </thead>
                         <?php
@@ -124,10 +124,10 @@
                                 <td> <?php echo $row['usuario_senha']; ?> </td>
                                 <td> <?php echo $row['usuario_nivel']; ?> </td>
                                 <td>
-                                    <button type="button" class="btn btn-success editbtn"> EDITAR </button>
+                                    <button type="button" class="btn btn-success editbtn"> Editar </button>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-danger deletebtn"> DELETAR </button>
+                                    <button type="button" class="btn btn-danger deletebtn"> Deletar </button>
                                 </td>
                             </tr>
                         </tbody>
