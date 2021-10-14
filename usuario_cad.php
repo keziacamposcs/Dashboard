@@ -49,8 +49,8 @@
 
                             <select class="form-control" name = "usuario_nivel">
                             <option selected>Selecione o nível do usuario</option>
-                            <option value = "1">Administrador</option>
-                            <option value = "2">Visitante</option>
+                            <option value = "Administrador">Administrador</option>
+                            <option value = "Visitante">Visitante</option>
                             </select>
 
                         </div>
