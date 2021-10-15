@@ -7,8 +7,6 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
-
 </head>
 
 <body>
@@ -29,27 +27,30 @@
                     <div class="modal-body">
 
                         <input type="hidden" name="update_id" id="update_id">
-
+                        
                         <div class="form-group">
-                            <label> Usuário </label>
-                            <input type="text" name="usuario_nome" id="usuario_nome" class="form-control"
-                                placeholder="Usuário">
+                            <label> Empresa </label>
+                            <input type="text" name="empresa_fatura" id="empresa_fatura" class="form-control"placeholder="Empresa">
                         </div>
 
                         <div class="form-group">
-                            <label> Senha </label>
-                            <input type="password" name="usuario_senha" id="usuario_senha" class="form-control"
-                                placeholder="Senha">
+                            <label> Centro de Custo</label>
+                            <input type="text" name="emprcentro_custo_faturaesa_cnpj" id="centro_custo_fatura" class="form-control"placeholder="Centro de Custo">
                         </div>
 
                         <div class="form-group">
-                            <label class="mb-0">Nível de Acesso</label>
+                            <label> Mês da Fatura </label>
+                            <input type="text" name="mes_fatura" id="mes_fatura" class="form-control"placeholder="Mês da Fatura">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label> Valor da Fatura </label>
+                            <input type="text" name="valor_fatura" id="valor_fatura" class="form-control"placeholder="Valor da Fatura">
+                        </div>
 
-                            <select class="form-control" name = "usuario_nivel" id = "usuario_nivel" placeholder="Selecione o nível de acesso">
-                            <option selected>Selecione o nível de acesso</option>
-                            <option value = "Administrador">Administrador</option>
-                            <option value = "Visitante">Visitante</option>
-                            </select>
+                        <div class="form-group">
+                            <label> Observação </label>
+                            <input type="text" name="obs_fatura" id="obs_fatura" class="form-control"placeholder="Observação">
                         </div>
 
                     </div>
@@ -88,60 +89,77 @@
     </div>
 
 
-    <div class="container">
+    <div class="container-fluid mt--7 " style= "top">
+      <!-- Table -->
+        <div class="row">
+            <div class="col">
+                <div class="card shadow">
+                    <div class="card-header border-1">
+                        <h3 class="mb-0">Faturas</h3> 
+                    </div>
 
+                    <div class="container" style="margin-top:10px">
 
-            <div class="card">
-                <div class="card-body">
-
-                    <?php
-                        include 'conexao/conexao.php';
-
-                        $query = "SELECT * FROM usuario";
-                        $query_run = mysqli_query($conexao, $query);
-            ?>
-                    <table id="datatableid" class="table table-bordered table">
-                    <thead class="thead-dark">
-                            <tr>
-                                <th scope="col"> ID</th>
-                                <th scope="col">Usuário</th>
-                                <th scope="col">Senha</th>
-                                <th scope="col"> Nível de Acesso </th>
-                                <th scope="col">  </th>
-                                <th scope="col">  </th>
-                            </tr>
-                        </thead>
                         <?php
-                if($query_run)
-                {
-                    foreach($query_run as $row)
-                    {
-            ?>
-                        <tbody>
-                            <tr>
-                                <td> <?php echo $row['usuario_id']; ?> </td>
-                                <td> <?php echo $row['usuario_nome']; ?> </td>
-                                <td> <?php echo $row['usuario_senha']; ?> </td>
-                                <td> <?php echo $row['usuario_nivel']; ?> </td>
-                                <td>
-                                    <button type="button" class="btn btn-success editbtn"> Editar </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-danger deletebtn"> Deletar </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <?php           
-                    }
-                }
-                else 
-                {
-                    echo "No Record Found";
-                }
-            ?>
-                    </table>
+                            include 'conexao/conexao.php';
+
+                            $query = "SELECT * FROM fatura";
+                            $query_run = mysqli_query($conexao, $query);
+                        ?>
+                        
+                        <table id="datatableid" class="table table-hover table">
+                        
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col"> ID</th>
+                                    <th scope="col">Empresa</th>
+                                    <th scope="col">Centro de Custo</th>
+                                    <th scope="col"> Mês </th>
+                                    <th scope="col"> Valor </th>
+                                    <th scope="col"> Observação </th>
+
+                                    <th scope="col">  </th>
+                                    <th scope="col">  </th>
+                                </tr>
+                            </thead>
+                            <?php
+                                if($query_run)
+                                {
+                                    foreach($query_run as $row)
+                                    {
+                            ?>
+                            <tbody>
+                                <tr>
+                                    <td> <?php echo $row['id_fatura']; ?> </td>
+                                    <td> <?php echo $row['empresa_fatura']; ?> </td>
+                                    <td> <?php echo $row['centro_custo_fatura']; ?> </td>
+                                    <td> <?php echo $row['mes_fatura']; ?> </td>
+                                    <td> R$ <?php echo number_format($row ['valor_fatura'],2, ',', '.')?> </td>
+                                    <td> <?php echo $row['obs_fatura']; ?> </td>
+
+                                    <td>
+                                        <button type="button" class="btn btn-success editbtn"> Editar </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger deletebtn"> Deletar </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <?php           
+                                    }
+                                }
+                                else 
+                                {
+                                    echo "Não possui dados";
+                                }
+                            ?>
+                        </table>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 
         </div>
@@ -165,26 +183,6 @@
                         //alert(response);
                     }
                 });
-            });
-
-        });
-    </script>
-
-
-    <script>
-        $(document).ready(function () {
-
-            $('#datatableid').DataTable({
-                "pagingType": "full_numbers",
-                "lengthMenu": [
-                    [10, 25, 50, -1],
-                    [10, 25, 50, "Tudp"]
-                ],
-                responsive: true,
-                language: {
-                    search: "_INPUT_",
-                    searchPlaceholder: "Pesquisar...",
-                }
             });
 
         });
@@ -227,13 +225,15 @@
                 console.log(data);
 
                 $('#update_id').val(data[0]);
-                $('#usuario_nome').val(data[1]);
-                $('#usuario_senha').val(data[2]);
-                $('#usuario_nivel').val(data[3]);
+                $('#empresa_fatura').val(data[1]);
+                $('#centro_custo_fatura').val(data[2]);
+                $('#mes_fatura').val(data[3]);
+                $('#valor_fatura').val(data[4]);
+                $('#obs_fatura').val(data[5]);
+
             });
         });
     </script>
-
 
 </body>
 </html>
