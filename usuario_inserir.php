@@ -1,7 +1,7 @@
 <?php
     include 'menu.php';
 
-    $usuario_nome = $_GET['usuario_nome'];
+    $usuario = $_GET['usuario'];
     $usuario_senha= $_GET['usuario_senha'];
     $usuario_nivel = $_GET['usuario_nivel'];
 ?>
@@ -27,7 +27,7 @@
             <?php
 
                 include 'conexao/conexao.php';
-                $sql = "INSERT INTO usuario (usuario_nome, usuario_senha, usuario_nivel) VALUES ('$usuario_nome', '$usuario_senha', '$usuario_nivel')";
+                $sql = "INSERT INTO usuario (usuario, usuario_senha, usuario_nivel) VALUES ('$usuario', '$usuario_senha', '$usuario_nivel')";
                 $inserir = mysqli_query($conexao, $sql);
 
                 if($sql )

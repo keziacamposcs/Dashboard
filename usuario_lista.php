@@ -30,7 +30,7 @@
 
                         <div class="form-group">
                             <label> Usuário </label>
-                            <input type="text" name="usuario_nome" id="usuario_nome" class="form-control"
+                            <input type="text" name="usuarioe" id="usuario" class="form-control"
                                 placeholder="Usuário">
                         </div>
 
@@ -124,8 +124,8 @@
                             ?>
                             <tbody>
                                 <tr>
-                                    <td> <?php echo $row['usuario_id']; ?> </td>
-                                    <td> <?php echo $row['usuario_nome']; ?> </td>
+                                    <td> <?php echo $row['id']; ?> </td>
+                                    <td> <?php echo $row['usuario']; ?> </td>
                                     <td> <?php echo $row['usuario_senha']; ?> </td>
                                     <td> <?php echo $row['usuario_nivel']; ?> </td>
                                     <td>
@@ -216,7 +216,7 @@
                 console.log(data);
 
                 $('#update_id').val(data[0]);
-                $('#usuario_nome').val(data[1]);
+                $('#usuario').val(data[1]);
                 $('#usuario_senha').val(data[2]);
                 $('#usuario_nivel').val(data[3]);
             });

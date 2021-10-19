@@ -30,7 +30,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="mb-0">Usuário</label>
-                                <input type="text" class="form-control form-control-alternative" placeholder="Nome do Usuário" name="usuario_nome" required="">
+                                <input type="text" class="form-control form-control-alternative" placeholder="Nome do Usuário" name="usuario" required="">
                         </div>
                     </div>
 
