@@ -3,16 +3,16 @@ session_start();
 include 'conexao/conexao.php';
 
 $usuario = $_POST['usuario'];
-$usuario_senha = $_POST['usuario_senha'];
+$usuario_senha = $_POST['senha'];
 
 $sql = "SELECT * FROM usuario WHERE usuario = '$usuario'";
 $buscar = mysqli_query($conexao, $sql);
 
 #   Busca senha
 $dados = mysqli_fetch_array($buscar);
-$senhadb = $dados['usuario_senha'];
+$senhadb = $dados['senha'];
 
-$senhaVerificada = md5($usuario_senha);
+$senhaVerificada = md5($senha);
 
 #   Verifica se existe o usuário
 $linha = mysqli_affected_rows($conexao);

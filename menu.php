@@ -1,3 +1,16 @@
+<?php
+session_start();
+if(!isset($_SESSION['usuario']) == true)
+{
+    unset($_SESSION['usuario']);
+
+    header('Location:login.php');
+}
+
+$logado = $_SESSION['usuario'];
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -153,7 +166,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                    teste
+                                    <?php echo $logado ?>
                                 </span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
@@ -174,8 +187,5 @@
     <script src="js/sb-admin-2.min.js"></script>
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
 </body>
 </html>
