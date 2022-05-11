@@ -12,7 +12,7 @@ $buscar = mysqli_query($conexao, $sql);
 $dados = mysqli_fetch_array($buscar);
 $senhadb = $dados['senha'];
 
-$senhaVerificada = md5($senha);
+$senhaVerificada = ($senha);
 
 #   Verifica se existe o usuário
 $linha = mysqli_affected_rows($conexao);
